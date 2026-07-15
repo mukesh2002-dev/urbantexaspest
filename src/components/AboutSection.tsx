@@ -30,6 +30,18 @@ export default function AboutSection() {
                 </p>
               </div>
 
+              <div className="grid grid-cols-3 gap-3 mt-6">
+                <div className="relative h-28 rounded-2xl overflow-hidden">
+                  <img src="/images/about/technician.jpg" alt="Our technician" className="w-full h-full object-cover" />
+                </div>
+                <div className="relative h-28 rounded-2xl overflow-hidden">
+                  <img src="/images/about/team.jpg" alt="Our team" className="w-full h-full object-cover" />
+                </div>
+                <div className="relative h-28 rounded-2xl overflow-hidden">
+                  <img src="/images/about/office.jpg" alt="Our office" className="w-full h-full object-cover" />
+                </div>
+              </div>
+
               <div className="grid grid-cols-2 gap-4 mt-6">
                 <div className="bg-secondary rounded-2xl p-6">
                   <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center mb-3">

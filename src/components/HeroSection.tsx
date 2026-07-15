@@ -1,19 +1,16 @@
 'use client';
 import { motion } from 'framer-motion';
 import { ArrowRight, Phone, Star, Shield, Award, BadgeCheck } from 'lucide-react';
-import MagneticButton from './MagneticButton';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image with Overlay */}
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#0a1628] via-[#0f1f3d] to-[#1a3a2a]">
+      {/* Premium gradient background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-text/90 via-text/85 to-primary/60 z-10" />
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
-          style={{ backgroundImage: 'url(/images/hero-home.jpg)' }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/5" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] -translate-x-1/3 translate-y-1/3" />
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
       </div>
 
       {/* Animated background shapes */}
@@ -21,22 +18,22 @@ export default function HeroSection() {
         <motion.div
           animate={{ y: [0, -30, 0], rotate: [0, 5, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-20 left-10 w-64 h-64 border border-white/5 rounded-full"
+          className="absolute top-20 left-10 w-64 h-64 border border-white/[0.03] rounded-full"
         />
         <motion.div
           animate={{ y: [0, 40, 0], rotate: [0, -5, 0] }}
           transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute bottom-40 right-20 w-96 h-96 border border-white/5 rounded-full"
+          className="absolute bottom-40 right-20 w-96 h-96 border border-white/[0.03] rounded-full"
         />
         <motion.div
-          animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
+          animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.4, 0.2] }}
           transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-1/3 right-1/4 w-32 h-32 bg-primary/30 rounded-full blur-xl"
+          className="absolute top-1/3 right-1/4 w-32 h-32 bg-primary/20 rounded-full blur-xl"
         />
         <motion.div
-          animate={{ x: [0, 50, 0], opacity: [0.2, 0.4, 0.2] }}
+          animate={{ x: [0, 50, 0], opacity: [0.1, 0.3, 0.1] }}
           transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-accent/20 rounded-full blur-2xl"
+          className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-accent/10 rounded-full blur-2xl"
         />
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
       </div>

@@ -9,12 +9,6 @@ interface Props {
   post: BlogPost;
 }
 
-const categoryGradients: Record<string, string> = {
-  'Bed Bugs': 'from-red-500/30 to-red-500/5',
-  'Spiders': 'from-purple-500/30 to-purple-500/5',
-  'Pest Control': 'from-primary/20 to-primary/5',
-};
-
 export default function BlogDetailContent({ post }: Props) {
   const relatedPosts = BLOG_POSTS.filter((p) => p.slug !== post.slug).slice(0, 3);
 
@@ -58,10 +52,12 @@ export default function BlogDetailContent({ post }: Props) {
 
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`relative h-64 lg:h-80 rounded-3xl overflow-hidden mb-10 bg-gradient-to-br ${categoryGradients[post.category] || 'from-primary/20 to-primary/5'} shadow-premium-lg`}>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <svg className="w-24 h-24 text-primary/20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg>
-            </div>
+          <div className="relative h-64 lg:h-80 rounded-3xl overflow-hidden mb-10 shadow-premium-lg">
+            <img
+              src={post.image}
+              alt={post.title}
+              className="w-full h-full object-cover"
+            />
           </div>
 
           <ScrollReveal>
@@ -114,13 +110,15 @@ export default function BlogDetailContent({ post }: Props) {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="group bg-white rounded-2xl overflow-hidden shadow-premium card-hover border border-border/30"
                 >
-                  <div className={`relative h-44 bg-gradient-to-br ${categoryGradients[related.category] || 'from-primary/20 to-primary/5'} overflow-hidden`}>
+                  <div className="relative h-44 overflow-hidden">
+                    <img
+                      src={related.image}
+                      alt={related.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                     <div className="absolute top-4 left-4 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-lg text-xs font-semibold text-primary">
                       {related.category}
-                    </div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <svg className="w-14 h-14 text-primary/20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg>
                     </div>
                   </div>
                   <div className="p-5">

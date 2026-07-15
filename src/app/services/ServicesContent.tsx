@@ -118,15 +118,24 @@ export default function ServicesContent() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: (i % 12) * 0.05 }}
-                    className="group bg-white rounded-2xl p-6 border border-border/30 card-hover shadow-premium hover:shadow-premium-lg"
+                    className="group bg-white rounded-2xl overflow-hidden border border-border/30 card-hover shadow-premium hover:shadow-premium-lg"
                   >
-                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                      <Icon className="w-6 h-6 text-primary" />
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+                      />
                     </div>
-                    <h3 className="text-lg font-semibold text-text mb-2 group-hover:text-primary transition-colors">{service.title}</h3>
-                    <p className="text-gray text-sm leading-relaxed mb-4">{service.shortDescription}</p>
-                    <div className="flex items-center gap-1 text-primary text-sm font-medium">
-                      Learn more <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    <div className="p-6">
+                      <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                        <Icon className="w-6 h-6 text-primary" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-text mb-2 group-hover:text-primary transition-colors">{service.title}</h3>
+                      <p className="text-gray text-sm leading-relaxed mb-4">{service.shortDescription}</p>
+                      <div className="flex items-center gap-1 text-primary text-sm font-medium">
+                        Learn more <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      </div>
                     </div>
                   </motion.a>
                 );

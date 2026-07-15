@@ -40,17 +40,26 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="group bg-white rounded-2xl p-8 card-hover shadow-premium border border-border/50"
+                className="group bg-white rounded-2xl overflow-hidden card-hover shadow-premium border border-border/50"
               >
-                <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-primary transition-all duration-300">
-                  <Icon className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+                  />
                 </div>
-                <h3 className="text-xl font-semibold text-text mb-3 group-hover:text-primary transition-colors">{service.title}</h3>
-                <p className="text-gray text-sm leading-relaxed mb-5">{service.shortDescription}</p>
-                <span className="inline-flex items-center gap-2 text-primary text-sm font-semibold group-hover:gap-3 transition-all">
-                  Learn More
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                </span>
+                <div className="p-8">
+                  <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-primary transition-all duration-300">
+                    <Icon className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-text mb-3 group-hover:text-primary transition-colors">{service.title}</h3>
+                  <p className="text-gray text-sm leading-relaxed mb-5">{service.shortDescription}</p>
+                  <span className="inline-flex items-center gap-2 text-primary text-sm font-semibold group-hover:gap-3 transition-all">
+                    Learn More
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                  </span>
+                </div>
               </motion.a>
             );
           })}

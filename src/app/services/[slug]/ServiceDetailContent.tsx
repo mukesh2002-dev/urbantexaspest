@@ -53,6 +53,13 @@ export default function ServiceDetailContent({ service }: { service: Service }) 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <ScrollReveal direction="left">
+              <div className="relative h-64 lg:h-72 rounded-3xl overflow-hidden mb-8 shadow-premium-lg">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <div className="bg-secondary rounded-3xl p-8 lg:p-10">
                 <div className={`w-16 h-16 bg-gradient-to-br ${iconColors[service.slug.split('-')[0]] || 'from-primary to-primary-light'} rounded-2xl flex items-center justify-center mb-6`}>
                   <span className="text-2xl text-white font-bold">{service.title.charAt(0)}</span>
