@@ -5,9 +5,19 @@ import MagneticButton from './MagneticButton';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-text via-text/95 to-primary/20">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-text/90 via-text/85 to-primary/60 z-10" />
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
+          style={{ backgroundImage: 'url(/images/hero-home.jpg)' }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
+      </div>
+
       {/* Animated background shapes */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 z-20 overflow-hidden pointer-events-none">
         <motion.div
           animate={{ y: [0, -30, 0], rotate: [0, 5, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
@@ -21,14 +31,13 @@ export default function HeroSection() {
         <motion.div
           animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-1/3 right-1/4 w-32 h-32 bg-primary/10 rounded-full blur-xl"
+          className="absolute top-1/3 right-1/4 w-32 h-32 bg-primary/30 rounded-full blur-xl"
         />
         <motion.div
           animate={{ x: [0, 50, 0], opacity: [0.2, 0.4, 0.2] }}
           transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-accent/5 rounded-full blur-2xl"
+          className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-accent/20 rounded-full blur-2xl"
         />
-        {/* Grid pattern overlay */}
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
       </div>
 
