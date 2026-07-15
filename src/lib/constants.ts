@@ -1,0 +1,372 @@
+import { Service, Testimonial, BlogPost, FaqItem, StatItem } from './types';
+
+export const COMPANY = {
+  name: 'Urban Texas Pest Control',
+  shortName: 'Urban Texas',
+  phone: '(210) 900-2323',
+  phoneRaw: '+12109002323',
+  email: 'service@urbantexaspest.com',
+  address: '9450 Brushy Point, San Antonio, TX 78250',
+  addressShort: 'San Antonio, TX',
+  city: 'San Antonio',
+  state: 'Texas',
+  zip: '78250',
+  years: 25,
+  reviews: 338,
+  happyCustomers: 5000,
+  hours: {
+    weekdays: '8:00 AM – 5:00 PM',
+    saturday: 'Closed',
+    sunday: 'Closed',
+  },
+  social: {
+    facebook: 'https://facebook.com/urbantexaspest',
+    instagram: 'https://instagram.com/urbantexaspest',
+    yelp: 'https://yelp.com/urbantexaspest',
+  },
+  googleReviewsUrl: 'https://search.google.com/local/reviews?q=urbantexaspest',
+};
+
+export const NAV_LINKS = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Residential', href: '/residential' },
+  { label: 'Commercial', href: '/commercial' },
+  { label: 'Services', href: '/services' },
+  { label: 'Service Areas', href: '/#service-areas' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Contact', href: '/contact' },
+];
+
+export const SERVICE_AREAS = [
+  'San Antonio', 'Kirby', 'Leon Valley', 'Converse', 'Live Oak',
+  'Universal City', 'Schertz', 'Timberwood Park', 'China Grove',
+  'Bulverde', 'Selma', 'Helotes', 'Fair Oaks Ranch', 'Cibolo',
+  'Lakehills', 'Von Ormy',
+];
+
+export const WHY_CHOOSE_US = [
+  {
+    title: 'Family Owned',
+    description: 'A family-owned business committed to transforming San Antonio pest control with honest, transparent service.',
+    icon: 'FaHome',
+  },
+  {
+    title: 'Safe Treatments',
+    description: 'Eco-friendly solutions safe for your family, pets, and the environment.',
+    icon: 'FaLeaf',
+  },
+  {
+    title: 'Affordable Pricing',
+    description: 'Transparent, affordable pricing with no confusing sales tactics or hidden fees.',
+    icon: 'FaDollarSign',
+  },
+  {
+    title: 'Experienced Team',
+    description: 'Over two decades of hands-on experience in residential and commercial pest control.',
+    icon: 'FaAward',
+  },
+  {
+    title: 'Guaranteed Results',
+    description: 'We stand by the quality of our service with a 100% satisfaction guarantee.',
+    icon: 'FaCheckCircle',
+  },
+  {
+    title: 'Customer Satisfaction',
+    description: '338+ 5-star Google reviews from happy San Antonio customers.',
+    icon: 'FaStar',
+  },
+  {
+    title: 'Eco Friendly',
+    description: 'Environmentally responsible methods that protect your home and the planet.',
+    icon: 'FaGlobeAmericas',
+  },
+];
+
+export const SERVICES: Service[] = [
+  {
+    id: 'pest-control',
+    slug: 'pest-control',
+    title: 'Pest Control',
+    shortDescription: 'Comprehensive pest control solutions for homes and businesses in San Antonio.',
+    description: 'The warm, humid climate of San Antonio creates the perfect breeding ground for pests. At Urban Texas Pest Control, we use advanced pest control techniques to combat local pests while preventing future infestations. Our team is equipped with the latest tools and knowledge to protect your property year-round.',
+    icon: 'FaBug',
+    image: '/images/services/pest-control.jpg',
+    features: ['Complete home inspection', 'Targeted treatment plans', 'Year-round protection', 'Eco-friendly solutions'],
+    benefits: ['Peace of mind', 'Healthy home environment', 'Long-term prevention', 'Cost-effective protection'],
+  },
+  {
+    id: 'termite-control',
+    slug: 'termite-control',
+    title: 'Termite Control',
+    shortDescription: 'Protect your property from costly termite damage with expert treatment and monitoring.',
+    description: 'Termites cause billions of dollars in property damage each year. Our comprehensive termite control solutions protect your property from these wood-destroying insects. We use advanced detection methods and targeted treatments to eliminate colonies and prevent future infestations.',
+    icon: 'FaHammer',
+    image: '/images/services/termite.jpg',
+    features: ['Thorough inspection', 'Colony elimination', 'Preventive barriers', 'Ongoing monitoring'],
+    benefits: ['Protect property value', 'Prevent structural damage', 'Long-term peace of mind', 'Cost-effective protection'],
+  },
+  {
+    id: 'rodent-control',
+    slug: 'rodent-control',
+    title: 'Rodent Control',
+    shortDescription: 'Keep rats and mice out with our comprehensive rodent exclusion and elimination services.',
+    description: 'Rodents can damage property and pose serious health risks. Our expert team is equipped to handle all types of rodent issues, from identifying and sealing entry points to implementing targeted treatment plans that keep them out for good.',
+    icon: 'FaRat',
+    image: '/images/services/rodent.jpg',
+    features: ['Entry point inspection', 'Exclusion services', 'Trapping and removal', 'Prevention plans'],
+    benefits: ['Disease prevention', 'Property protection', 'Peace of mind', 'Long-term solution'],
+  },
+  {
+    id: 'ant-control',
+    slug: 'ant-control',
+    title: 'Ant Control',
+    shortDescription: 'Eliminate ant infestations with targeted treatments that address the root cause.',
+    description: 'From fire ants to carpenter ants, we tackle infestations efficiently and effectively. Our targeted approach identifies the source of the problem and applies treatments designed for long-term results, not temporary fixes.',
+    icon: 'FaAnt',
+    image: '/images/services/ant.jpg',
+    features: ['Colony identification', 'Targeted baiting', 'Perimeter treatment', 'Preventive measures'],
+    benefits: ['Complete elimination', 'Prevent re-infestation', 'Protect your home', 'Family safe'],
+  },
+  {
+    id: 'cockroach-control',
+    slug: 'cockroach-control',
+    title: 'Cockroach Control',
+    shortDescription: 'Eliminate cockroach infestations with lasting, professional treatments.',
+    description: 'Cockroaches are bacteria-carrying pests that can contaminate your home and trigger allergies. Our treatments are designed to control these pests at the source and reduce the risk of ongoing contamination.',
+    icon: 'FaBeetle',
+    image: '/images/services/cockroach.jpg',
+    features: ['Infestation assessment', 'Gel bait application', 'Insect growth regulators', 'Sanitation guidance'],
+    benefits: ['Health protection', 'Allergen reduction', 'Complete elimination', 'Preventive care'],
+  },
+  {
+    id: 'bed-bug-control',
+    slug: 'bed-bug-control',
+    title: 'Bed Bug Control',
+    shortDescription: 'Comprehensive bed bug detection and elimination for homes and businesses.',
+    description: 'Bed bugs are small, elusive pests that can quickly become a nightmare. Our professional bed bug control solutions are designed to detect, eliminate, and prevent these pests from taking over your home or business.',
+    icon: 'FaBed',
+    image: '/images/services/bed-bug.jpg',
+    features: ['K9 inspection available', 'Heat treatments', 'Chemical treatments', 'Follow-up inspections'],
+    benefits: ['Complete eradication', 'Peaceful sleep', 'Protect your family', 'Discreet service'],
+  },
+  {
+    id: 'bee-control',
+    slug: 'bee-control',
+    title: 'Bee Control',
+    shortDescription: 'Safe and responsible bee removal and relocation services in San Antonio.',
+    description: 'Bees can pose a danger to your family, especially for those with allergies. Our team provides safe and responsible bee removal services, focusing on relocation when possible to protect these important pollinators.',
+    icon: 'FaBee',
+    image: '/images/services/bee.jpg',
+    features: ['Hive identification', 'Safe removal', 'Relocation services', 'Prevention guidance'],
+    benefits: ['Family safety', 'Environmental care', 'Allergy protection', 'Professional removal'],
+  },
+  {
+    id: 'scorpion-control',
+    slug: 'scorpion-control',
+    title: 'Scorpion Control',
+    shortDescription: 'Protect your home from scorpions with targeted treatment and exclusion services.',
+    description: 'Scorpions are a common concern in Texas homes. Our comprehensive scorpion control services include thorough inspections, targeted treatments, and exclusion methods to keep these dangerous pests out.',
+    icon: 'FaSpider',
+    image: '/images/services/scorpion.jpg',
+    features: ['Property inspection', 'Perimeter treatment', 'Exclusion sealing', 'Ongoing prevention'],
+    benefits: ['Home protection', 'Family safety', 'Peace of mind', 'Year-round defense'],
+  },
+  {
+    id: 'spider-control',
+    slug: 'spider-control',
+    title: 'Spider Control',
+    shortDescription: 'Safe removal of dangerous spiders including black widows and brown recluse.',
+    description: 'Spiders are one of the most feared pests. We safely remove dangerous species like black widows and brown recluse to ensure your home is protected and comfortable for your family.',
+    icon: 'FaSpider',
+    image: '/images/services/spider.jpg',
+    features: ['Species identification', 'Web removal', 'Chemical treatment', 'Preventive measures'],
+    benefits: ['Venomous spider removal', 'Home safety', 'Reduced pest food sources', 'Peace of mind'],
+  },
+  {
+    id: 'tick-control',
+    slug: 'tick-control',
+    title: 'Tick Control',
+    shortDescription: 'Protect your family and pets from tick-borne diseases with expert tick control.',
+    description: 'Ticks pose serious health risks to both humans and pets. Our tick control services target these dangerous pests in your yard and outdoor spaces, reducing the risk of tick-borne diseases.',
+    icon: 'FaDotCircle',
+    image: '/images/services/tick.jpg',
+    features: ['Yard assessment', 'Targeted spraying', 'Tick habitat reduction', 'Seasonal treatment'],
+    benefits: ['Disease prevention', 'Pet protection', 'Yard safety', 'Family peace of mind'],
+  },
+  {
+    id: 'silverfish',
+    slug: 'silverfish',
+    title: 'Silverfish Control',
+    shortDescription: 'Eliminate silverfish and protect your belongings from these destructive pests.',
+    description: 'Silverfish are destructive pests that can damage books, clothing, and paper goods. They thrive in humid environments. Our targeted treatments eliminate infestations and prevent future problems.',
+    icon: 'FaFish',
+    image: '/images/services/silverfish.jpg',
+    features: ['Moisture assessment', 'Targeted treatment', 'Exclusion services', 'Preventive guidance'],
+    benefits: ['Protect belongings', 'Reduce humidity issues', 'Complete elimination', 'Long-term prevention'],
+  },
+  {
+    id: 'black-widow',
+    slug: 'black-widow',
+    title: 'Black Widow Control',
+    shortDescription: 'Expert removal of dangerous black widow spiders from your property.',
+    description: 'Black widow spiders are one of the most dangerous spiders in Texas. Our expert team provides comprehensive black widow control services to locate, eliminate, and prevent these venomous spiders from returning.',
+    icon: 'FaSpider',
+    image: '/images/services/black-widow.jpg',
+    features: ['Thorough inspection', 'Targeted chemical treatment', 'Web removal', 'Preventive maintenance'],
+    benefits: ['Venomous spider removal', 'Family safety', 'Property protection', 'Peace of mind'],
+  },
+  {
+    id: 'brown-recluse',
+    slug: 'brown-recluse',
+    title: 'Brown Recluse Control',
+    shortDescription: 'Specialized treatment for brown recluse spider infestations in San Antonio.',
+    description: 'Brown recluse spiders are a growing concern for Texas homeowners. As a "true house spider," they prefer to live and reproduce indoors. Our specialized treatment plans eliminate these venomous spiders and prevent re-infestation.',
+    icon: 'FaSpider',
+    image: '/images/services/brown-recluse.jpg',
+    features: ['Home inspection', 'Decluttering guidance', 'Chemical treatment', 'Regular monitoring'],
+    benefits: ['Medical threat removal', 'Home protection', 'Complete eradication', 'Ongoing prevention'],
+  },
+  {
+    id: 'cricket',
+    slug: 'cricket',
+    title: 'Cricket Control',
+    shortDescription: 'Eliminate cricket infestations and restore peace and quiet to your home.',
+    description: 'Crickets are nocturnal creatures that can enter your home seeking food and moisture. Their chirping can be disruptive, and they can cause damage to fabrics and plants. Our effective cricket control eliminates these pests.',
+    icon: 'FaMusic',
+    image: '/images/services/cricket.jpg',
+    features: ['Infestation assessment', 'Perimeter treatment', 'Moisture control', 'Preventive sealing'],
+    benefits: ['Peace and quiet', 'Property protection', 'Complete elimination', 'Preventive care'],
+  },
+  {
+    id: 'earwig',
+    slug: 'earwig',
+    title: 'Earwig Control',
+    shortDescription: 'Effective earwig control to protect your home and garden from these pests.',
+    description: 'Earwigs can become a nuisance when they invade your home in large numbers. Our targeted treatments eliminate earwigs and address the moist conditions that attract them to your property.',
+    icon: 'FaBug',
+    image: '/images/services/earwig.jpg',
+    features: ['Moisture assessment', 'Perimeter treatment', 'Habitat modification', 'Preventive measures'],
+    benefits: ['Home protection', 'Garden preservation', 'Complete elimination', 'Moisture control'],
+  },
+];
+
+export const SERVICE_PROCESS = [
+  {
+    step: 1,
+    title: 'Inspection',
+    description: 'We conduct a thorough inspection of your property to identify pests, entry points, and conditions that attract infestations.',
+    icon: 'FaSearch',
+  },
+  {
+    step: 2,
+    title: 'Treatment',
+    description: 'Our experts apply targeted, eco-friendly treatments designed to eliminate pests at the source while keeping your family safe.',
+    icon: 'FaSprayCan',
+  },
+  {
+    step: 3,
+    title: 'Protection',
+    description: 'We implement preventive measures including sealing entry points and applying barriers to stop pests from returning.',
+    icon: 'FaShieldAlt',
+  },
+  {
+    step: 4,
+    title: 'Follow Up',
+    description: 'We schedule regular follow-ups to monitor results and adjust treatments as needed for year-round protection.',
+    icon: 'FaClipboardCheck',
+  },
+];
+
+export const TESTIMONIALS: Testimonial[] = [
+  { name: 'Monique', text: 'Exceptional service! The best. Not a bug in sight!', rating: 5, time: '3 hours ago', initial: 'M' },
+  { name: 'S P', text: "We've been using Urban Texas Pest Control for almost 2 years and we couldn't be happier with them. CJ and Kember are very professional and always respond to any concerns we've had.", rating: 5, time: '23 hours ago', initial: 'S' },
+  { name: 'SR', text: "I have used a few pest control services in San Antonio and by FAR these guys are my favorite! All staff are polite and stand behind their services. If I could give 10 stars, I would!", rating: 5, time: 'a day ago', initial: 'S' },
+  { name: 'M Gonzalez', text: 'Office emailed and text me to confirm appointment. They were on time. Removed wasps nest and gave great customer service. Thank you!', rating: 5, time: '2 days ago', initial: 'M' },
+  { name: 'Sateesh A.', text: 'Best pest control. Thank you Joshua for being interactive and explaining it all that way I get to know how to treat pests in future too.', rating: 5, time: '2 days ago', initial: 'S' },
+  { name: 'Wanda Cook', text: 'We are a long time customers. Great service! Totally reliable.', rating: 5, time: '2 days ago', initial: 'W' },
+  { name: 'Jose H.', text: 'Great pest service company!! CJ Petersen came out to do our first time pest service at our new home and did a phenomenal job!!', rating: 5, time: '2 days ago', initial: 'J' },
+  { name: 'Maria De S.', text: "These guys always do an awesome job. If I run into any issues in between services, they come by and take care of it no problem. I definitely recommend!", rating: 5, time: '3 days ago', initial: 'M' },
+];
+
+export const STATISTICS: StatItem[] = [
+  { value: 25, suffix: '+', label: 'Years Experience' },
+  { value: 338, suffix: '+', label: 'Google Reviews' },
+  { value: 5000, suffix: '+', label: 'Happy Customers' },
+  { value: 100, suffix: '%', label: 'Satisfaction' },
+];
+
+export const FAQS: FaqItem[] = [
+  {
+    question: 'How often should I get pest control services?',
+    answer: 'For most homes in San Antonio, we recommend quarterly treatments to maintain a pest-free environment. However, the frequency may vary based on the severity of infestation, property conditions, and seasonal pest activity. We offer customizable treatment plans to meet your specific needs.',
+  },
+  {
+    question: 'Are your pest control treatments safe for pets and children?',
+    answer: 'Yes! We use eco-friendly, environmentally responsible pest control methods that are safe for families, pets, and the environment. Our treatments are applied with care to minimize any risk, and we provide specific guidance on when it\'s safe to re-enter treated areas.',
+  },
+  {
+    question: 'What areas do you serve?',
+    answer: 'We proudly serve San Antonio and the surrounding areas including Kirby, Leon Valley, Converse, Live Oak, Universal City, Schertz, Timberwood Park, China Grove, Bulverde, Selma, Helotes, Fair Oaks Ranch, Cibolo, Lakehills, and Von Ormy.',
+  },
+  {
+    question: 'How long does a typical pest control treatment take?',
+    answer: 'Most residential pest control treatments take approximately 30-60 minutes, depending on the size of your property and the severity of the infestation. Commercial treatments may vary based on the size and type of facility.',
+  },
+  {
+    question: 'Do you offer a satisfaction guarantee?',
+    answer: 'Absolutely! We stand behind the quality of our service with a 100% satisfaction guarantee. If you\'re not completely satisfied with our treatment, we\'ll come back at no additional charge to address any remaining pest issues.',
+  },
+  {
+    question: 'What pests are common in San Antonio, Texas?',
+    answer: 'San Antonio\'s warm, humid climate creates the perfect breeding ground for various pests including ants, cockroaches, termites, rodents, scorpions, spiders (including black widows and brown recluse), bed bugs, silverfish, crickets, earwigs, ticks, and bees.',
+  },
+  {
+    question: 'Do you offer commercial pest control services?',
+    answer: 'Yes! We provide comprehensive commercial pest control solutions tailored to businesses of all sizes. Our commercial services help maintain a pest-free environment, protect your reputation, and ensure compliance with health and safety regulations.',
+  },
+  {
+    question: 'How do I prepare my home for pest control treatment?',
+    answer: 'Our team will provide specific instructions before treatment. Generally, we recommend clearing countertops, moving furniture away from walls, covering or storing food items, and ensuring pets are secured during treatment. We\'ll guide you through every step.',
+  },
+];
+
+export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: 'signs-of-bed-bug-infestations',
+    title: 'Signs of Bed Bug Infestations: Early Detection Guide',
+    excerpt: 'Learn how to identify the early signs of bed bugs in your home or business. Early detection is key to effective bed bug control.',
+    date: '2024-11-23',
+    image: '/images/blog/bed-bugs.jpg',
+    category: 'Bed Bugs',
+    author: 'Urban Texas Pest Control',
+    content: 'Bed bugs are small, elusive pests that can quickly become a nightmare if they invade your home or business. The key to effective bed bug control is early detection...',
+  },
+  {
+    slug: 'black-widow-myths',
+    title: 'Black Widow Myths: Separating Fact from Fiction',
+    excerpt: 'Learn the truth about black widow spiders and why professional control is essential for safety.',
+    date: '2024-12-16',
+    image: '/images/blog/black-widow.jpg',
+    category: 'Spiders',
+    author: 'Urban Texas Pest Control',
+    content: 'The black widow spider is one of the most infamous arachnids, often associated with dangerous bites and horror stories...',
+  },
+  {
+    slug: 'san-antonio-pest-guide',
+    title: 'Complete Guide to San Antonio Pest Control',
+    excerpt: 'Everything you need to know about pest control in San Antonio, from common pests to prevention tips.',
+    date: '2025-01-10',
+    image: '/images/blog/sa-guide.jpg',
+    category: 'Pest Control',
+    author: 'Urban Texas Pest Control',
+  },
+];
+
+export const TRUST_BADGES = [
+  { label: 'Family Owned', icon: 'FaHome' },
+  { label: 'Licensed & Insured', icon: 'FaShieldAlt' },
+  { label: 'Pet Friendly', icon: 'FaDog' },
+  { label: 'Eco Friendly', icon: 'FaLeaf' },
+  { label: 'Same Day Service', icon: 'FaClock' },
+];
